@@ -1,0 +1,39 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(216, 87, 255);
+}
+
+.namebox {
+  background-color: aquamarine;
+  font-family: 'Roboto', sans-serif;
+  color: blueviolet;
+}
+
+.yesnobox {
+  color: coral;
+  font-family: 'Roboto', sans-serif;
+  background-color: pink;
+}
+
+.messagebox {
+  background-color: rgb(57, 170, 161);
+  color: rgb(255, 218, 9);
+  font-family: 'Roboto', sans-serif;
+  width: 350px;
+  height: 100px;
+}
+
+.submitbutton {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(9, 255, 0);
+  border-color: rgb(25, 102, 165);
+  width: 70px;
+  height: 35px;
+}
+
+.submitbutton:hover {
+  border: none;
+  background-color: rgb(7, 206, 0);
+  width: 80px;
+  height: 45px;
+}

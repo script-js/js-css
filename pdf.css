@@ -1,0 +1,17 @@
+cti-pdf #navigation_controls{
+  background: rgb(43, 168, 226);
+}
+
+cti-pdf #navigation_controls input{
+  background: rgb(77, 199, 255);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+cti-pdf #zoom_controls{
+  background: rgb(43, 168, 226);
+}
+
+cti-pdf button {
+  background: coral;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

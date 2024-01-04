@@ -1,0 +1,16 @@
+body {
+  background-color: coral;
+}
+
+input {
+  width: 800px;
+  background-color: aquamarine;
+}
+
+button {
+  color: blueviolet;
+  cursor: pointer;
+  background-color: yellow;
+  border: 1px solid;
+}
+

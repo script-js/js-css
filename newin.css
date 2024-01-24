@@ -1,0 +1,228 @@
+@font-face {
+    font-family: Metro;
+    src: url(https://script-js.github.io/ubarcade/static/resources/metropolis-extra-bold.otf);
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(https://script-js.github.io/ubarcade/static/resources/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(https://script-js.github.io/ubarcade/static/resources/Roboto.ttf);
+}
+
+[data-theme="dark"] {
+    --body: #1c1c1c;
+    --color: white;
+    --userselect-background: #696969;
+    --userselect-color: #1d1d1d;
+
+    /* logo */
+    --logoColor: #47CA64;
+
+    /* search */
+    --search-color: #aaa;
+    --search-background: #171717;
+    --search-border: #313131;
+    --search-background-hover: #0c0c0c;
+    --search-border-hover: #171717;
+    --search-outline-hover: #0c0c0c;
+    --search-outline: #171717;
+    /* icons */
+    --search-icon-color: white;
+    --check-color: white;
+    --check-background-hover: white;
+    --check-color-hover: black;
+}
+
+[data-theme="light"] {
+    --body: #dcdcde;
+    --color: black;
+    --userselect-background: #696969;
+    --userselect-color: #1d1d1d;
+
+    /* logo */
+    --logoColor: #2A803C;
+
+    /* search */
+    --search-color: #aaa;
+    --search-background: #444;
+    --search-border: #808080;
+    --search-outline: #444;
+    --search-background-hover: #313131;
+    --search-border-hover: #444;
+    --search-outline-hover: #313131;
+    /* icons */
+    --search-icon-color: white;
+    --check-color: white;
+    --check-background-hover: black;
+    --check-color-hover: white;
+}
+
+::selection {
+    background: var(--userselect-background);
+    color: var(--userselect-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scrollbar-color: var(--color) var(--body);
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--body);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color);
+    border-radius: 6px;
+}
+
+body {
+    font-family: Roboto;
+    margin: 0;
+    background: var(--body);
+    color: var(--color);
+    display: grid;
+    min-height: 100vh;
+    justify-items: center;
+    align-content: center;
+}
+
+.welcome {
+    display: grid;
+    justify-items: center;
+    width: max-content;
+}
+
+.logo {
+    width: 4em;
+    height: 4em;
+}
+
+.fill {
+    fill: var(--logoColor);
+}
+
+.search {
+    width: 25em;
+    height: 3em;
+    background-color: var(--search-background);
+    border: 1px solid var(--search-border);
+    outline: 1px solid var(--search-outline);
+    border-radius: 37px;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    margin-bottom: 30px;
+    transition: ease 0.5s;
+}
+
+.search:hover {
+    background-color: var(--search-background-hover);
+    border: 1px solid var(--search-border-hover);
+    outline: 1px solid var(--search-outline-hover);
+}
+
+.searchi {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--search-color);
+}
+
+.searchi:focus {
+    .search {
+    background-color: var(--search-background-hover);
+    border: 1px solid var(--search-border-hover);
+    outline: 1px solid var(--search-outline-hover);
+    }
+}
+
+.searchic {
+    width: 32px;
+    height: 22px;
+    margin-right: 10px;
+    color: var(--search-icon-color);
+}
+
+a.chc {
+    width: 23px;
+    height: 23px;
+    margin-right: 8px;
+    padding: 6px;
+    transition: ease 0.2s;
+    border-radius: 30px;
+    cursor: var(--cursorHand);
+}
+
+.check {
+    width: 23px;
+    height: 23px;
+    color: var(--check-color);
+}
+
+.chc:hover {
+    background-color: var(--check-background-hover);
+}
+
+.chc:hover svg {
+    color: var(--check-color-hover);
+}
+
+.rectUp {
+    border-radius: 10px;
+    background-color: var(--search-background-hover);
+    border: 1px solid var(--search-border-hover);
+    outline: 1px solid var(--search-outline-hover);
+}
+
+.rectDown {
+    background-color: var(--search-background);
+    border: 1px solid var(--search-border);
+    outline: 1px solid var(--search-outline);
+    border-radius: 37px;
+}
+
+       a {
+    color: white;
+  }
+
+
+      .settings {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        align-items: center;
+        width: 35px;
+        height: 34px;
+        border-radius: 10px;
+        background-color: var(--search-background);
+        transition: ease 0.5s;
+        border: 1px solid var(--search-border);
+        outline: 1px solid var(--search-outline);
+        cursor: pointer;
+      }
+
+      .settings:hover {
+        background-color: var(--search-background-hover);
+        border: 1px solid var(--search-border-hover);
+        outline: 1px solid var(--search-outline-hover);
+      }
+  a:hover {
+    background-color: white;
+    color: black;
+  }

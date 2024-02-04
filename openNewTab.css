@@ -20,7 +20,10 @@
   direction: ltr;
   -moz-font-feature-settings: 'liga';
   -moz-osx-font-smoothing: grayscale;
-  content: 'open_in_new'
+  content: 'open_in_new';
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 
 .openNew:hover {

@@ -30,5 +30,7 @@
 
 .openNew:hover {
   background: black;
-  width: 305px;
+  width: 100px;
+  height: 100px;
+  padding: 50px;
 }

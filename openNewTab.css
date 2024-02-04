@@ -26,11 +26,10 @@
   transition: ease 200ms;
   text-align: center;
   cursor: pointer;
+  padding: 5px;
 }
 
 .openNew:hover {
   background: black;
-  width: 100px;
-  height: 100px;
   padding: 50px;
 }

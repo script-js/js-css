@@ -5,5 +5,7 @@ sslink.rel = "stylesheet";
 ntDIV.classList = "openNew";
 ntDIV.innerHTML = "open_in_new";
 ntDIV.onclick = function() {window.open(location.href)}
-document.body.appendChild(sslink)
-document.body.appendChild(ntDIV)
+if (window.top != window.self) {
+  document.body.appendChild(sslink)
+  document.body.appendChild(ntDIV)
+}

@@ -1,1 +1,1 @@
-a
+var uvlink = "https://lightspeedsucks.promathclass.com"

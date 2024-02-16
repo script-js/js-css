@@ -75,10 +75,12 @@
         <button id='urlbutton'
           onclick='window.history.forward()' class='material-symbols-outlined toolicon' style="font-size: 27px; color: gray">arrow_forward</button>
         <button id='urlbutton' onclick='document.getElementById(getActiveFrameId()).src = internal_pages.newtab;' class='material-symbols-outlined toolicon' style="font-size: 27px; color: gray">home</button>
+        
         <input hidden id='urlbar' list="searchsuggestions"/>
         <datalist id="searchsuggestions"></datalist>
         <div id="extensionlist"></div>
         <button style="float:right;font-size: 27px; color: gray;" id='urlbutton' onclick='document.getElementById(getActiveFrameId()).requestFullscreen();' class='material-symbols-outlined toolicon'>fullscreen</button>
+        <button id='urlbutton' onclick='sendToDataURL()' class='material-symbols-outlined toolicon' style="font-size: 27px; color: gray" title="Get URL">link</button>
           <button id='options' style="float:right" hidden><span hidden></span></button>
       </div>
     </div>

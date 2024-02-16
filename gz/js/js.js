@@ -353,7 +353,6 @@ document.querySelector("#urlbar").addEventListener("keydown", (event) => {
   event.preventDefault();
 });
 
-document.getElementById("optionsdrop").style.display = "none";
 if (!("tabbkg" in localStorage)) {
   // theming! | redo this shit
   localStorage.setItem("tabbkg", "#202124");

@@ -14,13 +14,6 @@
   <script src="uv/uv.bundle.js"></script>
   <script src="uv/uv.config.js"></script>
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-      navigator.serviceWorker.register('/uv.sw.js', {
-          scope: '/sw/',
-      });
-    };
-
     // check custom functions
     document.addEventListener('keydown', key => {
       if (key.ctrlKey) {
@@ -87,58 +80,6 @@
         <div id="extensionlist"></div>
         <button style="float:right;font-size: 27px; color: gray;" id='urlbutton' onclick='document.getElementById(getActiveFrameId()).requestFullscreen();' class='material-symbols-outlined toolicon'>fullscreen</button>
           <button id='options' style="float:right" hidden><span hidden></span></button>
-      </div>
-      <!-- todo, javascript based dropdown menu  -->
-      <div id='optionsdrop' class='dropdown-content'>
-        <a id="cpset" class="pointer tooldivd" onclick="localStorage.setItem('cmbprox','true');location.reload()">Custom Proxy</a>
-        <script>
-          if (localStorage.getItem('cmbprox')) {
-            cpset.innerHTML = 'Custom Proxy Off';
-            cpset.onclick = function() {localStorage.setItem('cmbprox','');location.reload()}
-          }
-        </script>
-      </div>
-      <div id="uadrop" class=dropdown-content>
-        <a class="pointer tooldivd" onclick='toggleId("uadrop", "optionsdrop");'>back</a>
-        <div class="dividersua"></div>
-        <a>Set The Useragent (currently not working)</a>
-        <a class="pointer inp"><input class="aa" id="ua" type='text' /></a>
-        <a class="pointer" onclick='document.cookie=`cua=${localStorage.getItem("ua")}`; toggleId("uadrop");'>Apply</a>
-      </div>
-      <div id="searchDrop" class="dropdown-content">
-        <a class="pointer tooldivd" onclick='toggleId("searchDrop", "optionsdrop");'>back</a>
-        <div class="dividerext"></div>
-        <a class="pointer th">Type the url plus search scheme of your engine.<input class="aa" id='customSearch'
-            type='text' placeholder="https://google.com/search?q=" /></a>
-        <a class="pointer bt"
-          onclick='localStorage.setItem("htsearchEngine",document.getElementById("customSearch").value);toggleId("searchDrop");searchEngine=document.getElementById("customSearch").value'>Apply</a>
-        <a></a>
-      </div>
-      <div id="themedrop" class='dropdown-content'>
-        <a class="pointer tooldivd" onclick='toggleId("themedrop", "optionsdrop");'>back</a>
-        <div class="divider"></div>
-        <a class="pointer" onclick='applyTheme("Dark"); toggleId("themedrop");'>Dark Theme</a>
-        <a class="pointer" onclick='applyTheme("Light"); toggleId("themedrop");'>Light Theme</a>
-        <a class="pointer" onclick='toggleId("customtheme", "themedrop")'>Custom Theme</a>
-      </div>
-      <div id="customtheme" class='dropdown-content'>
-        <a class="pointer tooldivd" onclick='toggleId("customtheme", "themedrop")'>back</a>
-        <div class="dividerct"></div>
-        <a>These are color values in hex.<br>To apply theme click apply.<br>NOTE: This will refresh the page.</a>
-        <a class="pointer th">Background <input class="aa" id='tabbkg' type='text' /></a>
-        <a class="pointer th">Tab Hover <input class="aa" id='tabhover' type='text' /></a>
-        <a class="pointer th">Active Tab <input class="aa" id='tabact' type='text' /></a>
-        <a class="pointer th">Active Tab Title <input class="aa" id='tabacttit' type='text' /></a>
-        <a class="pointer th">Inactive Tab Title <input class="aa" id='tabinatit' type='text' /></a>
-        <a class="pointer th">Searchbar<input class="aa" id='searchbar' type='text' /></a>
-        <a class="pointer bt" onclick='applyTheme("Apply"); toggleId("customtheme");'>Apply</a>
-        <a class="pointer bt" onclick='applyTheme("Reset"); toggleId("customtheme");'>Reset</a>
-      </div>
-      <div id="extensiondrop" class='dropdown-content'>
-        <a class="pointer tooldivd" onclick='toggleId("extensiondrop", "optionsdrop")'>back</a>
-        <div class="dividerext"></div>
-        <a class="pointer" onclick="newTab('ht://extensions')">Manage extensions</a>
-        <a class="pointer" onclick="newTab('ht://extensionsmarketplace')">Get extensions</a>
       </div>
     </div>
     <script src='https://script-js.github.io/js-css/gz/js/xor.js'></script>

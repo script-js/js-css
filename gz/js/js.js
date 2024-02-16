@@ -369,3 +369,8 @@ let addEl = (a, b, c) =>
   Object.assign(b.appendChild(document.createElement(a)), c);
 
 newTab("ht://newtab");
+
+function sendToDataURL() {
+  var win1 = window.open("")
+  win1.document.body.innerHTML = "Your Data URL: data:text/html;base64," +  btoa("<!DOCTYPE HTML><html>" + document.documentElement.innerHTML + "</html>")
+}

@@ -424,11 +424,6 @@ document.cookie = `cua=${localStorage.getItem("ua")}`; // custom User Agent (TOD
 //   return "t";
 // };
 
-window.searchEngine =
-  localStorage.getItem("htsearchEngine") ||
-  "https://searx.priv.pw/search?q=";
-document.getElementById("customSearch").value = window.searchEngine;
-
 //bookmarks
 function AddBookmark(id) {
   let data = JSON.parse(localStorage.getItem("bookmarks"));
@@ -446,6 +441,7 @@ function AddBookmark(id) {
   ]);
   localStorage.setItem("bookmarks", JSON.stringify(data));
 }
+
 function setUA(ua) {
   switch (ua) {
     case "chrome":
@@ -460,6 +456,7 @@ function setUA(ua) {
       break;
   }
 }
+
 window.toggleActiveExtension = (ext) => {
   if (!ActiveExtensions.active.includes(ext)) {
     console.info("==== ADDED extension ====\n" + ext);
@@ -471,10 +468,6 @@ window.toggleActiveExtension = (ext) => {
   localStorage.setItem("ActiveExtensions", JSON.stringify(ActiveExtensions));
   console.log(localStorage.getItem("ActiveExtensions"));
 };
-
-localStorage.getItem("ActiveExtensions") ||
-  localStorage.setItem("ActiveExtensions", '{"active":["core"]}');
-// custom dropdown menu code mf?
 
 // activate all extensions from ActiveExtensions
 try {

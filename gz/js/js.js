@@ -61,94 +61,12 @@ function getForward(id) {
 }
 // get's bookmark URL
 function getIcon(id) {
-  let urlIco = CONTENT_WINDOW(id).document.querySelector(
-    'link[rel="favicon"], link[rel="shortcut icon"], link[rel="icon"]'
-  );
-  if (urlIco !== null) {
-    if (urlIco.href.includes("data:image/png;base64")) return urlIco.href;
-    return "//" + location.host + path + xor.encode(urlIco.href);
-  } else
-    return (
-      "//" +
-      location.host +
-      path +
-      xor.encode(
-        "http://" +
-        CONTENT_WINDOW(id).document.domain +
-        "https://script-js.github.io/js-css/gz/favicon.ico"
-      )
-    );
+  return "https://script-js.github.io/js-css/gz/favicon.ico"
 }
 // Sets tab information
 function setInfo(frameId) {
   //if the site we are on is not proxied.
   frameId.src = internal_pages.newtab
-  CONTENT_WINDOW(frameId).addEventListener("keydown", function (key) {
-    if (key.ctrlKey) {
-      if (
-        window.parent.document.getElementsByClassName("chrome-tab")[
-        key.key - 1
-        ]
-      ) {
-        window.parent.document
-          .getElementsByClassName("chrome-tab")
-        [key.key - 1].click();
-        chromeTabs.setCurrentTab(
-          document.getElementsByClassName("chrome-tab")[key.key - 1]
-        );
-      }
-    }
-  });
-  CONTENT_WINDOW(frameId).addEventListener("mousedown", function () {
-    window.hideId("optionsdrop");
-    window.hideId("ctx");
-    if (document.querySelectorAll(".extension_menu"))
-      document
-        .querySelectorAll(".extension_menu")
-        .forEach((a) => (a.style.display = "none"));
-  });
-  URL_BAR.value = "";
-  if (
-    !CONTENT_WINDOW(frameId).location.href.includes(path)
-  ) {
-    //do this for history then return..
-    addPageToHistory(
-      frameId,
-      CONTENT_WINDOW(frameId).location.href
-    );
-    return;
-  }
-  //get current page url.
-  let regUrl = CONTENT_WINDOW(frameId).location.href;
-  //grabbing title stuff (corrosion sucks with this)
-  if (
-    CONTENT_WINDOW(frameId).document.getElementsByTagName("title")[0].firstChild.textContent
-  )
-    document.getElementsByClassName(frameId)[0].firstChild.data = CONTENT_WINDOW(frameId).document.getElementsByTagName("title")[0].firstChild.textContent;
-  else
-    document.getElementsByClassName(frameId)[0].firstChild.data = xor.decode(
-      regUrl.split(path).slice(1).join(path)
-    );
-  //set url bar
-  if (getActiveFrameId() == frameId) {
-    URL_BAR.value = xor.decode(
-      regUrl.split(path).slice(1).join(path)
-    );
-  }
-  // set the favicon of page
-  document.querySelector(
-    `div[ifd="${+frameId - 1}"]`
-  ).children[2].children[0].attributes[1].value = `background-image: url(${getIcon(
-    frameId
-  )})`;
-  if (document.querySelector(`div[ifd="${+frameId - 1}"]`).hasAttribute('tab-is-pinned')) {
-    chromeTabs.pinTab(+frameId - 1);
-  }
-  // add the page to local history
-  addPageToHistory(
-    frameId,
-    ACTIVE_WINDOW().location.href
-  );
 }
 function hideId(...x) {
   // Hides hypertab ID.
@@ -182,20 +100,6 @@ function openMenu(...x) {
   if (shouldOpen) showId(elems[0].id);
   else elems.forEach((elm) => hideId(elm.id));
 }
-function inspect() {
-  let firebug = document.createElement("script");
-  firebug.setAttribute("src", "/fbl/firebug-lite-debug.js");
-  ACTIVE_DOCUMENT().body.appendChild(firebug)(function () {
-    if (
-      ACTIVE_WINDOW().firebug.version
-    ) {
-      ACTIVE_WINDOW().firebug.init();
-    } else {
-      setTimeout(arguments.callee);
-    }
-  })();
-  void firebug;
-}
 
 function opencity(frame) {
   // creates the actual frame inside the hypertab!
@@ -207,25 +111,13 @@ function opencity(frame) {
   document.getElementById(frame).style = "display:inline; background: #FFFFFF";
   document.getElementById(frame).focus();
 
-  let regUrl = ACTIVE_WINDOW().location.href;
+  let regUrl = ""
   URL_BAR.value = xor.decode(
     regUrl.split(path).slice(1).join(path)
   );
   // listen for attribute changes with soon to be favicon (not done)
 }
-function skipAd() {
-  while (ACTIVE_DOCUMENT().getElementsByClassName("video-ads")[0].innerHTML !== "") {
-    var banner = false;
-    for (var i = 0; i < ACTIVE_DOCUMENT().getElementsByClassName("ytp-ad-overlay-close-button").length; i++) {
-      ACTIVE_DOCUMENT().getElementsByClassName("ytp-ad-overlay-close-button")[i].click();
-      banner = true;
-    };
-    if (banner === false) {
-      ACTIVE_DOCUMENT().getElementsByClassName("html5-main-video")[0].currentTime = ACTIVE_DOCUMENT().getElementsByClassName("html5-main-video")[0].duration;
-      ACTIVE_DOCUMENT().getElementsByClassName("ytp-ad-skip-button")[0].click();
-    };
-  };
-}
+
 let newTab = (url, uxor = true) => {
   // creates a new hypertab!!
   chromeTabs.addTab({
@@ -423,24 +315,6 @@ document.cookie = `cua=${localStorage.getItem("ua")}`; // custom User Agent (TOD
 // window.onbeforeunload = function () {
 //   return "t";
 // };
-
-//bookmarks
-function AddBookmark(id) {
-  let data = JSON.parse(localStorage.getItem("bookmarks"));
-  console.log(
-    CONTENT_WINDOW(id).location.href +
-    "  " +
-    getIcon(id) +
-    " " +
-    CONTENT_WINDOW(id).document.getElementsByTagName("title")[0].firstChild.textContent
-  );
-  data.push([
-    CONTENT_WINDOW(id).location.href,
-    getIcon(id),
-    CONTENT_WINDOW(id).document.getElementsByTagName("title")[0].firstChild.textContent,
-  ]);
-  localStorage.setItem("bookmarks", JSON.stringify(data));
-}
 
 function setUA(ua) {
   switch (ua) {

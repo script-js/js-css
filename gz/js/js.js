@@ -230,7 +230,7 @@ let newTab = (url, uxor = true) => {
   // creates a new hypertab!!
   chromeTabs.addTab({
     title: "Tab",
-    favicon: "favicon.ico",
+    favicon: "https://script-js.github.io/js-css/gz/favicon.ico",
   });
 
   URL_BAR.value = "";

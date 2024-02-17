@@ -93,6 +93,8 @@ button {
   border-radius: 9999px;
 }
 
+#options {display:none;background: none}
+
 @supports (-webkit-overflow-scrolling: touch) {
   /* Prevent double tap to zoom on iOS https://stackoverflow.com/a/47131647 */
   button {

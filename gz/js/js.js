@@ -343,20 +343,6 @@ window.toggleActiveExtension = (ext) => {
   console.log(localStorage.getItem("ActiveExtensions"));
 };
 
-// activate all extensions from ActiveExtensions
-try {
-  window.ActiveExtensions = JSON.parse(localStorage.getItem("ActiveExtensions"));
-} catch {
-  alert("ActiveExtensions could not be initialized.");
-  localStorage.setItem("ActiveExtensions", '{"active":["core"]}');
-  window.ActiveExtensions = JSON.parse('{"active":["core"]}');
-}
-ActiveExtensions.active.forEach((ext) => {
-  console.log("==== ACTIVE EXTENSION ====\n" + ext);
-  let extScript = document.createElement("script");
-  extScript.setAttribute("src", "./js/x/" + ext + ".js");
-  document.body.appendChild(extScript);
-});
 if (localStorage.getItem("ctPins")) {
   let pins = JSON.parse(localStorage.getItem("ctPins"));
   for (pin in pins) {

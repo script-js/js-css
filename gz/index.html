@@ -42,12 +42,11 @@
   <div class='surface'>
     <div class='mock-browser'>
       <div id="ctx" class="dropdown-content" style="top:0px;left:0px;right:auto;z-index:99">
-        <a class="pointer" id="pin" onclick="toggleId('ctx');chromeTabs.pinTab(ctxTab)">Pin tab</a> 
         <a class="pointer" style="margin-left: 0px;"onclick="toggleId('ctx');newTab('ht://newtab')">New tab</a>
         <a class="pointer"
           onclick="toggleId('ctx');chromeTabs.removeTab(document.querySelectorAll('[ifd=\'' + ctxTab + '\']')[0]);document.getElementById(parseInt(ctxTab) + 1).remove()">Close</a>
         <a class="pointer"
-          onclick="toggleId('ctx');document.getElementById(parseInt(ctxTab)+1).contentWindow.location.reload()">Go Home</a>
+          onclick="toggleId('ctx');document.getElementById(getActiveFrameId()).src = internal_pages.newtab;">Go Home</a>
       </div>
       <div class='chrome-tabs chrome-tabs-dark-theme' id="tabsmain" style='--tab-content-margin: 9px'>
         <div class='chrome-tabs-content' id='0'>

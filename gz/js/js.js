@@ -370,7 +370,11 @@ let addEl = (a, b, c) =>
 
 newTab("ht://newtab");
 
-function sendToDataURL() {
+function sendToDataURL(ab) {
   var win1 = window.open("")
-  win1.document.body.innerHTML = "Your Data URL: <br><textarea onclick='this.select()'>data:text/html;base64," +  btoa("<!DOCTYPE HTML><html>" + document.documentElement.innerHTML + "</html>") + "</textarea>"
+  if (!ab) {
+    win1.document.body.innerHTML = "Your Data URL: <br><textarea onclick='this.select()'>data:text/html;base64," +  btoa("<!DOCTYPE HTML><html>" + document.documentElement.innerHTML + "</html>") + "</textarea>"
+  } else {
+    win1.document.documentElement.innerHTML = window.document.documentElement.innerHTML
+  }
 }

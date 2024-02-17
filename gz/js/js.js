@@ -365,3 +365,7 @@ function sendToDataURL(ab) {
     win1.document.write('<iframe src="' + htmldocC + '" style="border: none; width:100%;height: 100%;position:absolute;left:0px;top:0px;" allowfullscreen>')
   }
 }
+
+if (location.href.includes("data:")) {
+  dataBTNS.style.display = "none";
+}

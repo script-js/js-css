@@ -357,10 +357,11 @@ let addEl = (a, b, c) =>
 newTab("ht://newtab");
 
 function sendToDataURL(ab) {
+  var htmldocC = "data:text/html;base64," +  btoa("<!DOCTYPE HTML><html>" + document.documentElement.innerHTML + "</html>")
   var win1 = window.open("")
   if (!ab) {
-    win1.document.body.innerHTML = "Your Data URL: <br><textarea onclick='this.select()'>data:text/html;base64," +  btoa("<!DOCTYPE HTML><html>" + document.documentElement.innerHTML + "</html>") + "</textarea>"
+    win1.document.body.innerHTML = "Your Data URL: <br><textarea onclick='this.select()'>" + htmldocC + "</textarea>"
   } else {
-    win1.document.documentElement.innerHTML = window.document.documentElement.innerHTML
+    win1.document.write('<iframe src="' + htmldocC + '" style="border: none; width:100%;height: 100%;position:absolute;left:0px;top:0px;" allowfullscreen>')
   }
 }

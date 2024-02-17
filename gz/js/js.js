@@ -362,7 +362,7 @@ newTab("ht://newtab");
 
 function sendToDataURL(ab) {
   var htmldocC = "data:text/html;base64," +  btoa("<!DOCTYPE HTML><html>" + document.documentElement.innerHTML + "</html>")
-  var win1 = window.open("")
+  var win1 = window.open("about:blank")
   if (!ab) {
     win1.document.body.innerHTML = "Your Data URL: <br><textarea onclick='this.select()'>" + htmldocC + "</textarea>"
   } else {

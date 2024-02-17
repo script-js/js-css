@@ -190,7 +190,10 @@ button:active {
   outline: none;
   border: 0;
   font-size: large;
+  background: none;
 }
+
+#createTab {background: none}
 
 @media only screen and (max-width: 600px) {
   #urlbutton {

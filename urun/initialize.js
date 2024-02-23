@@ -6,5 +6,5 @@ window.addEventListener("keyup", event => {
 })
 
 function urrun() {
-  console.log()
+  alert()
 }

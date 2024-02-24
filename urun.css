@@ -35,5 +35,10 @@ body,html {
   padding: 10px;
   background: #6cc263;
   border-radius: 5px;
-  cursor:pointer;
+  cursor: pointer;
+  transition: ease 200ms;
+}
+
+.eBtn:hover {
+  border-radius: 1px;
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap')
+
 .flex {
   display: flex;
   justify-content: center;
@@ -18,4 +20,20 @@
 body,html {
   text-align: center;
   background: black;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+}
+
+.eCMD {
+  display: none;
+}
+
+.eBtn {
+  border: none;
+  padding: 10px;
+  background: #6cc263;
+  border-radius: 5px;
+  cursor:pointer;
 }

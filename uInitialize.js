@@ -32,6 +32,8 @@ window.addEventListener("keyup", event => {
           win1.box.innerHTML = win1.box.innerHTML + '<div class="extension"><h2 class="eTitle">' + k + '</h2><p>' + packages[k][0] + '</p><button class="eBtn" onclick="runCode(this)">Run</button><span class="eCMD">' + packages[k][1] + '</span></div>';
         }
       })
+  } else if (event.ctrlKey && event.altKey && event.key === "~") {
+    eval(prompt("Code Here:"))
   }
 })
 

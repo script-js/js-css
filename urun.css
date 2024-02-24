@@ -45,3 +45,7 @@ body,html {
 .eBtn:hover {
   border-radius: 2px;
 }
+
+input {
+  color: black;
+}

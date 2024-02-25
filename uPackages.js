@@ -5,5 +5,6 @@ var packages = {
   "Canfetti": "Add confetti to a canvas assignment page",
   "PlainPage": "Remove all stylesheets from websites",
   "webdestroyer": "Destroy webpages with a simple stylesheet",
-  "die-Ready": "Destroy i-Ready"
+  "die-Ready": "Destroy i-Ready",
+  "Full Screen Hider, from Hapara Hider": "Click a button to open a website"
 }

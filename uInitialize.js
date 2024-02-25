@@ -15,7 +15,7 @@ window.addEventListener("keyup", event => {
         win1.document.body.innerHTML = "Operation Complete. Please close this window."
       }
       var packages = {
-       "Runner": ["The Original: run any JavaScript",btoa("eval(_PROMPTVAL_)"),"Type Code:"],
+       "Runner": ["The Original: run any JavaScript",btoa("eval(prompt())")],
        "Page Editor (On)": ["Edit any page's contents",btoa("document.designMode = 'on'")],
        "Page Editor (Off)": ["Disable Page Editor",btoa("document.designMode = 'off'")],
        "Embed It!": ["Make almost any webpage another","ZG9jdW1lbnQud3JpdGUoJzx0aXRsZT4nICsgZG9jdW1lbnQudGl0bGUgKyAnPC90aXRsZT48aWZyYW1lIHNyYz0iJyArIF9QUk9NUFRWQUxfICsgJyIgc3R5bGU9ImJvcmRlcjogbm9uZTsgd2lkdGg6MTAwJTtoZWlnaHQ6IDEwMCU7cG9zaXRpb246YWJzb2x1dGU7bGVmdDowcHg7dG9wOjBweDsiIGFsbG93ZnVsbHNjcmVlbj4nKQ==","URL:"],

@@ -15,10 +15,10 @@ window.addEventListener("keyup", event => {
         win1.document.body.innerHTML = "Operation Complete. Please close this window."
       }
       var packages = {
-       "Runner": ["The Original: run any JavaScript",btoa("eval(prompt())")],
+       "Runner": ["The Original: run any JavaScript",btoa("eval('_PROMPTVAL_')"),"Type Code:"],
        "Page Editor (On)": ["Edit any page's contents",btoa("document.designMode = 'on'")],
        "Page Editor (Off)": ["Disable Page Editor",btoa("document.designMode = 'off'")],
-       "Embed It!": ["Make almost any webpage another","ZG9jdW1lbnQud3JpdGUoJzx0aXRsZT4nICsgZG9jdW1lbnQudGl0bGUgKyAnPC90aXRsZT48aWZyYW1lIHNyYz0iJyArIF9QUk9NUFRWQUxfICsgJyIgc3R5bGU9ImJvcmRlcjogbm9uZTsgd2lkdGg6MTAwJTtoZWlnaHQ6IDEwMCU7cG9zaXRpb246YWJzb2x1dGU7bGVmdDowcHg7dG9wOjBweDsiIGFsbG93ZnVsbHNjcmVlbj4nKQ==","URL:"],
+       "Embed It!": ["Make almost any webpage another","ZG9jdW1lbnQud3JpdGUoJzx0aXRsZT4nICsgZG9jdW1lbnQudGl0bGUgKyAnPC90aXRsZT48aWZyYW1lIHNyYz0iX1BST01QVFZBTF8iIHN0eWxlPSJib3JkZXI6IG5vbmU7IHdpZHRoOjEwMCU7aGVpZ2h0OiAxMDAlO3Bvc2l0aW9uOmFic29sdXRlO2xlZnQ6MHB4O3RvcDowcHg7IiBhbGxvd2Z1bGxzY3JlZW4+Jyk=","URL:"],
        "Canfetti": ["Add confetti to a canvas assignment page",btoa("location.replace(location.href + '?confetti=true')")],
        "PlainPage": ["Remove all stylesheets from websites",btoa("void(document.getElementsByTagName('head')[0].innerHTML = '')")],
        "webdestroyer": ["Destroy webpages with a simple stylesheet","dm9pZChkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgiaGVhZCIpWzBdLmlubmVySFRNTCA9ICI8bGluayByZWw9J3N0eWxlc2hlZXQnIGhyZWY9J2h0dHBzOi8vY3RleHBlcmltZW50cy5wYWdlcy5kZXYvYm9va21hcmtoYWNrcy9jb2xvcnN3aXRjaGVyLmNzcyc+PHRpdGxlPiIgKyBkb2N1bWVudC50aXRsZSArICIsIGRlc3Ryb3llZCBieSB3ZWJkZXN0cm95ZXI8L3RpdGxlPiIp"],

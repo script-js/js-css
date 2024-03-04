@@ -622,17 +622,15 @@ function getIcon(id) {
   );
   if (urlIco !== null) {
     if (urlIco.href.includes("data:image/png;base64")) return urlIco.href;
-    return "//" + location.host + path + xor.encode(urlIco.href);
+    return "//" + location.host + path + urlIco.href
   } else
     return (
       "//" +
       location.host +
       path +
-      xor.encode(
         "http://" +
         CONTENT_WINDOW(id).document.domain +
-        internal_pages.favicon
-      )
+        + "/favicon.ico"
     );
 }
 // Sets tab information
@@ -678,7 +676,7 @@ function setInfo(frameId) {
   if (
     CONTENT_WINDOW(frameId).document.getElementsByTagName("title")[0].firstChild.textContent
   )
-    document.getElementsByClassName(frameId)[0].firstChild.data = CONTENT_WINDOW(frameId).document.getElementsByTagName("title")[0].firstChild.textContent;
+    document.getElementsByClassName(frameId)[0].firstChild.data = CONTENT_WINDOW(frameId).document.title;
   else
     document.getElementsByClassName(frameId)[0].firstChild.data = xor.decode(
       regUrl.split(path).slice(1).join(path)
@@ -693,11 +691,6 @@ function setInfo(frameId) {
   if (document.querySelector(`div[ifd="${+frameId - 1}"]`).hasAttribute('tab-is-pinned')) {
     chromeTabs.pinTab(+frameId - 1);
   }
-  // add the page to local history
-  addPageToHistory(
-    frameId,
-    ACTIVE_WINDOW().location.href
-  );
 }
 function hideId(...x) {
   // Hides hypertab ID.

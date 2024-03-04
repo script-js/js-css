@@ -622,12 +622,9 @@ function getIcon(id) {
   );
   if (urlIco !== null) {
     if (urlIco.href.includes("data:image/png;base64")) return urlIco.href;
-    return "//" + location.host + path + urlIco.href
+    return urlIco.href
   } else
     return (
-      "//" +
-      location.host +
-      path +
         "http://" +
         CONTENT_WINDOW(id).document.domain +
         + "/favicon.ico"

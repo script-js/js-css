@@ -47,7 +47,7 @@ document.cookie = "oldsmobile=badcar"
 
   var tabC = 1;
   const defaultTabProperties = {
-    title: "MiniBrowser Tab",
+    title: "Tab",
     favicon: false,
   };
 
@@ -622,19 +622,18 @@ function getIcon(id) {
   );
   if (urlIco !== null) {
     return urlIco.href
-  } else
-    return (
-        "http://" +
-        CONTENT_WINDOW(id).document.domain +
-        + "/favicon.ico"
-    );
+  } else {
+    return internal_pages.favicon;
+  }
 }
 // Sets tab information
 function setInfo(frameId) {
   //get current page url.
   let regUrl = CONTENT_WINDOW(frameId).location.href;
   //grabbing title stuff (corrosion sucks with this)
-  document.getElementsByClassName(frameId)[0].firstChild.data = CONTENT_WINDOW(frameId).document.title;
+  if (CONTENT_WINDOW(frameId).document.title) {
+    document.getElementsByClassName(frameId)[0].firstChild.data = CONTENT_WINDOW(frameId).document.title;
+  }
   // set the favicon of page
   document.querySelector(
     `div[ifd="${+frameId - 1}"]`

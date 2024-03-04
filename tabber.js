@@ -621,7 +621,6 @@ function getIcon(id) {
     'link[rel="favicon"], link[rel="shortcut icon"], link[rel="icon"]'
   );
   if (urlIco !== null) {
-    if (urlIco.href.includes("data:image/png;base64")) return urlIco.href;
     return urlIco.href
   } else
     return (
@@ -632,53 +631,10 @@ function getIcon(id) {
 }
 // Sets tab information
 function setInfo(frameId) {
-  //if the site we are on is not proxied.
-  frameId.src = internal_pages.newtab
-  CONTENT_WINDOW(frameId).addEventListener("keydown", function (key) {
-    if (key.ctrlKey) {
-      if (
-        window.parent.document.getElementsByClassName("chrome-tab")[
-        key.key - 1
-        ]
-      ) {
-        window.parent.document
-          .getElementsByClassName("chrome-tab")
-        [key.key - 1].click();
-        chromeTabs.setCurrentTab(
-          document.getElementsByClassName("chrome-tab")[key.key - 1]
-        );
-      }
-    }
-  });
-  CONTENT_WINDOW(frameId).addEventListener("mousedown", function () {
-    window.hideId("ctx");
-    if (document.querySelectorAll(".extension_menu"))
-      document
-        .querySelectorAll(".extension_menu")
-        .forEach((a) => (a.style.display = "none"));
-  });
-  if (
-    !CONTENT_WINDOW(frameId).location.href.includes(path)
-  ) {
-    //do this for history then return..
-    addPageToHistory(
-      frameId,
-      CONTENT_WINDOW(frameId).location.href
-    );
-    return;
-  }
   //get current page url.
   let regUrl = CONTENT_WINDOW(frameId).location.href;
   //grabbing title stuff (corrosion sucks with this)
-  if (
-    CONTENT_WINDOW(frameId).document.getElementsByTagName("title")[0].firstChild.textContent
-  )
-    document.getElementsByClassName(frameId)[0].firstChild.data = CONTENT_WINDOW(frameId).document.title;
-  else
-    document.getElementsByClassName(frameId)[0].firstChild.data = xor.decode(
-      regUrl.split(path).slice(1).join(path)
-    );
-  //set url bar
+  document.getElementsByClassName(frameId)[0].firstChild.data = CONTENT_WINDOW(frameId).document.title;
   // set the favicon of page
   document.querySelector(
     `div[ifd="${+frameId - 1}"]`

@@ -729,11 +729,8 @@ let newTab = (url, uxor = true) => {
 
   if (url.startsWith("ht://")) {
     frame.setAttribute("src", htHandler(url));
-  }
-  else if (uxor == false) {
-    frame.setAttribute("src", url);
   } else {
-    frame.setAttribute("src", "//" + location.host + path + xor.encode(url));
+    frame.setAttribute("src", url);
   }
 
   frame.setAttribute("allow", "fullscreen");

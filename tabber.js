@@ -814,6 +814,7 @@ function tabberInit(nocont) {
           setInfo(document.getElementsByClassName("chrome-tab")[key.key - 1].ifd + 1)
         }
       }   
+})
     hypertabContainer = document.querySelector(".chrome-tabs");
     chromeTabs = new ChromeTabs();
     chromeTabs.init(hypertabContainer);

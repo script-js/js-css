@@ -47,7 +47,7 @@ document.cookie = "oldsmobile=badcar"
 
   var tabC = 1;
   const defaultTabProperties = {
-    title: "Tab",
+    title: internal_pages.title,
     favicon: false,
   };
 
@@ -337,7 +337,7 @@ document.cookie = "oldsmobile=badcar"
     }
 
     updateTab(tabEl, tabProperties) {
-      tabEl.querySelector(".chrome-tab-title").textContent =
+      tabEl.querySelector(".chrome-tab-title").innerHTML =
         tabProperties.title;
 
       const faviconEl = tabEl.querySelector(".chrome-tab-favicon");
@@ -761,7 +761,6 @@ let items = [
 ];
 
 document.cookie = `cua=${localStorage.getItem("ua")}`; // custom User Agent (TODO)
-// document.head.insertAdjacentHTML("beforeend", `<style>.chrome-tabs.chrome-tabs-dark-theme {background: ${localStorage.getItem('tabbkg')}} .dropdown-content {background-color: ${localStorage.getItem('tabbkg')}} .mock-browser-content {background-color: ${localStorage.getItem('mockb')}} .chrome-tabs.chrome-tabs-dark-theme .chrome-tabs-bottom-bar {background-color: ${localStorage.getItem('tabact')}} .chrome-tabs.chrome-tabs-dark-theme .chrome-tab[active] .chrome-tab-background > svg .chrome-tab-geometry {fill: ${localStorage.getItem('tabact')}} .chrome-tabs.chrome-tabs-dark-theme .chrome-tab .chrome-tab-background > svg .chrome-tab-geometry {fill: ${localStorage.getItem('tabhover')}} .chrome-tabs.chrome-tabs-dark-theme .chrome-tab[active] .chrome-tab-title {color: ${localStorage.getItem('tabacttit')}} .chrome-tabs.chrome-tabs-dark-theme .chrome-tab .chrome-tab-title {color: ${localStorage.getItem('tabinatit')}} #urlbar {background: ${localStorage.getItem('searchbar')} color: ${localStorage.getItem('nt')} } #createTab {color: ${localStorage.getItem('nt')}} .dropdown-content frame {color: ${localStorage.getItem('nt')}} #urlbutton {color: ${localStorage.getItem('nt')}} #options {color: ${localStorage.getItem('nt')}} </style>`)
 
 function setUA(ua) {
   switch (ua) {

@@ -701,8 +701,7 @@ function opencity(frame) {
   document.getElementById(frame).style = "display:inline; background: #FFFFFF";
   document.getElementById(frame).focus();
 
-  let regUrl = ACTIVE_WINDOW().location.href;
-  // listen for attribute changes with soon to be favicon (not done)
+  
 }
 function skipAd() {
   while (ACTIVE_DOCUMENT().getElementsByClassName("video-ads")[0].innerHTML !== "") {

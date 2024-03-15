@@ -518,7 +518,7 @@ document.cookie = "oldsmobile=badcar"
 
 
 function titleChanger(id) {
-  document.getElementsByClassName("2")[0].innerText = prompt("Tab Title:")
+  document.getElementsByClassName(id)[0].innerText = prompt("Tab Title:")
 }
 
 

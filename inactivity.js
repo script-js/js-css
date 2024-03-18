@@ -11,6 +11,7 @@ function inactivity(seconds,func) {
     inactivitySecs = inactivitySecs + 1;
     if (inactivitySecs > seconds) {
       func()
+      clearInterval(check)
     }
   },1000)
 }

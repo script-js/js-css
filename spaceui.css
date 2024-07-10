@@ -12,6 +12,8 @@ button,input {
 
 button {cursor:pointer}
 
+input[type="submit"] {cursor:pointer}
+
 .modal {
   display: none;
   position: fixed;

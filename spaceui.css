@@ -16,6 +16,7 @@ button {cursor:pointer}
   display: none;
   position: fixed;
   z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%;
@@ -30,6 +31,7 @@ button {cursor:pointer}
 .modal-content {
   background-color: #3a4c7a;
   margin: auto;
+  padding: 20px;
   border: 3px solid #040c24;
   outline: 2px solid #9da5bd;
 }

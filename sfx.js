@@ -13,7 +13,7 @@ var sfx = {
       elems[k].addEventListener("click",function() {
         sfx.play(url)
       }
-    }
+    })
     }
     addfx()
     const observer = (new MutationObserver(addfx)).observe(document.body, {

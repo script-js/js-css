@@ -12,6 +12,7 @@ body {
     width: 30px;
     height: 30px;
     border: none;
+    transition: ease 100ms;
     color: white;
   }
 
@@ -27,6 +28,7 @@ body {
     border: 1px solid whitesmoke;
     cursor: pointer;
     color: white;
+    transition: ease 100ms;
     background-color: #2b2a33;
     border: 1px solid lightblue;
   }
@@ -35,6 +37,7 @@ body {
     border: 1px solid lightblue;
     border-radius: 8px;
     background-color: #2b2a33;
+    transition: ease 100ms;
     color: white;
   }
 
@@ -43,6 +46,7 @@ body {
     border-radius: 8px;
     background-color: #2b2a33;
     color: white;
+    transition: ease 100ms;
   }
 
   button:hover {
@@ -63,8 +67,10 @@ body {
   select:hover {
     border-radius: 2px;
   }
+
   a {
     color: white;
+    transition: ease 100ms;
   }
 
   a:hover {
